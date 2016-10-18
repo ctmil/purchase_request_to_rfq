@@ -114,6 +114,7 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
             'taxes_id': [(6, 0, taxes_ids)],
             'purchase_request_lines': [(4, item.line_id.id)],
 	    'product_uom': product.uom_id.id,
+	    'price_unit': product.standard_price,
             'date_planned':
                 vals.get('date_planned', False) or item.line_id.date_required,
 
